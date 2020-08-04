@@ -90,20 +90,20 @@ def main():
     if args.pattern == "yz":
       print(yz("", args.length).find(args.find))
     elif args.pattern == "bruijn":
-      print(len(de_bruijn(alphabet,4)).find(args.find))
+      print(de_bruijn(alphabet,4)[:args.length].find(args.find))
     elif args.pattern == "msf":
       print(msf("", args.length).find(args.find))
     else:
-      print("Unknown pattern type, use 'yz', 'bruijn' or 'msf'")
+      print("[!] Unknown pattern type, use 'yz', 'bruijn' or 'msf'.")
   else:
     if args.pattern == "yz":
       print(yz("", args.length))
     elif args.pattern == "bruijn":
-      print(len(de_bruijn(alphabet,4)))
+      print(de_bruijn(alphabet,4)[:args.length])
     elif args.pattern == "msf":
       print(msf("", args.length)) 
     else:
-      print("Unknown pattern type, use 'yz', 'bruijn' or 'msf'")
+      print("[!] Unknown pattern type, use 'yz', 'bruijn' or 'msf'.")
 
 if __name__ == "__main__":
   main()
